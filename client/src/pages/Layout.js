@@ -28,6 +28,9 @@ const Layout = () => {
     <>
     <Menu>
       <Menu.Item>
+        <Link to="/users">Users</Link>
+      </Menu.Item>
+      <Menu.Item>
           <Link to="/">Home</Link>
           <Menu.Item>
       </Menu.Item>
