@@ -8,6 +8,10 @@ import RequireAuth from "./components/RequireAuth";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Users from "./components/Users";
+import UserShow from "./components/UserShow";
+import Posts from "./components/Posts";
+import UserForm from "./components/UserForm";
+import PostForm from "./components/PostForm";
 
 
 function App() {
@@ -19,6 +23,10 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/users" element={<Users/>}/>
+        <Route path="/users/:id" element={<UserShow/>}/>
+        <Route path="/users/:id/edit" element = {<UserForm/>}/>
+        <Route path="/users/:id/posts" element={<Posts/>}/>
+        <Route path = "/users/:user_id/posts/:id/edit" element = {<PostForm />}/>
         <Route element={<RequireAuth />}>
           {/* protected routes go here */}
         <Route path="/" element={<Home />} />

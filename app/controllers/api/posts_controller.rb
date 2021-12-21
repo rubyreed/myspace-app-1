@@ -23,7 +23,7 @@ class Api::PostsController < ApplicationController
     if (@post.update(post_params))
       render json: @post
     else
-      render json: { errors: @post.errors }, status: :unprocessable_entity
+      render json: { errors: post.errors }, status: :unprocessable_entity
     end
   end
 
