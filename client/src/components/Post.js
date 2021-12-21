@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 import PostForm from "./PostForm";
 
 const Post = (props) => {
-  const {user_id,id, title, body, updatePost} = props
+  const {user_id,id, title, body, updatePost, deletePost} = props
   const [showForm, setShowForm] = useState(false);
 
   const toggleForm = () => {
@@ -20,6 +20,7 @@ const Post = (props) => {
         {showForm ? "Cancel" : "Update"}
       </Button>
       {showForm && <PostForm id = {id} title = {title} body={body} updatePost = {updatePost}/>}
+    <Button onClick={() => deletePost(id)}>Delete</Button>
     </div>
   )
 };

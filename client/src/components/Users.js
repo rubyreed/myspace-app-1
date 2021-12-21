@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import User from "./User";
-import UserForm from "./UserForm";
+// import UserForm from "./UserForm";
 
 const Users = () => {
 
@@ -27,8 +27,20 @@ const renderUsers = () => {
     return <p>No Users</p>
   }
   return users.map((user) => {
-    return <User key={user.id}{...user}updateUser={updateUser}/>
+    return <User key={user.id}{...user}updateUser={updateUser} deleteUser={deleteUser}/>
   });
+};
+
+function refreshPage(){
+  window.location.reload(false);
+};
+
+
+const deleteUser = async (id) => {
+  let response = await axios.delete(`/api/users/${id}`);
+  let filteredUsers = users.filter((user) => user.id !== id);
+  setUsers(filteredUsers);
+  refreshPage();
 };
 
 // const displayNewUser = (user) => {

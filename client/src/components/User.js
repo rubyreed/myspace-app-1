@@ -4,8 +4,8 @@ import UserForm from "./UserForm";
 import { Button } from "semantic-ui-react";
 
 const User = (props) => {
+  const {id, email, password, updateUser, deleteUser} = props;
   const [showForm, setShowForm] = useState(false);
-  const {id, email, password, updateUser} = props;
 
  const toggleForm = () => {
    setShowForm(!showForm);
@@ -22,6 +22,7 @@ const User = (props) => {
         {showForm ? "Cancel" : "Update"}
       </Button>
       {showForm && <UserForm id = {id} email = {email} password = {password} updateUser = {updateUser}/>}
+    <Button onClick={() => deleteUser(id)}>Delete</Button>
     </div>
   );
 };

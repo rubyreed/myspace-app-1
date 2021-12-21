@@ -21,7 +21,7 @@ const Posts = () => {
  
     console.log("mounted");
     getPosts();
-    //params can only be here when it is not changing, good for simply projects not everything
+  
   },[]);
 
   const updatePost = (changedPost) => {
@@ -34,12 +34,18 @@ const Posts = () => {
       return <p>No Posts</p>
     }
     return posts.map((post) => {
-      return <Post key={post.id}{...post} updatePost={updatePost}/>;
+      return <Post key={post.id}{...post} updatePost={updatePost} deletePost={deletePost}/>;
     });
   };
 
   const displayNewPost = (post) => {
     setPosts([post,...posts])
+  };
+
+  const deletePost = async (id) => {
+    let response = await axios.delete(`/api/users/${params.id}/posts/${id}`);
+    let filteredPosts = posts.filter((post) => post.id !== id);
+    setPosts(filteredPosts);
   };
   
   return (
