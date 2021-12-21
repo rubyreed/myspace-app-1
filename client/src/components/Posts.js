@@ -13,7 +13,6 @@ const Posts = () => {
 
   useEffect(() => {
 
-    
   const getPosts = async () => {
     let response = await axios.get(`/api/users/${params.id}/posts`);
     setPosts(response.data)
@@ -23,15 +22,19 @@ const Posts = () => {
     console.log("mounted");
     getPosts();
     //params can only be here when it is not changing, good for simply projects not everything
-  },[params]);
+  },[]);
 
+  const updatePost = (changedPost) => {
+    let updatedPosts = posts.map((post) => (post.id === changedPost.id ? changedPost : post));
+    setPosts(updatedPosts)
+  }
   
   const renderPosts = () => {
     if (posts.length === 0) {
       return <p>No Posts</p>
     }
     return posts.map((post) => {
-      return <Post key={post.id}{...post}/>;
+      return <Post key={post.id}{...post} updatePost={updatePost}/>;
     });
   };
 
