@@ -17,24 +17,29 @@ const getUsers = async () => {
   setUsers(response.data)
 };
 
+const updateUser = (changedUser) => {
+  let updatedUsers = users.map((user) => (user.id === changedUser.id ? changedUser : user))
+  setUsers(updatedUsers)
+};
+
 const renderUsers = () => {
   if (users.length === 0) {
     return <p>No Users</p>
   }
   return users.map((user) => {
-    return <User key={user.id}{...user}/>
+    return <User key={user.id}{...user}updateUser={updateUser}/>
   });
 };
 
-const displayNewUser = (user) => {
-  setUsers([user,...users])
-};
+// const displayNewUser = (user) => {
+//   setUsers([user,...users])
+// };
 
 
   return (
     <div>
-      <h1>Users</h1>
-      <UserForm newestUser = {displayNewUser}/>
+      <h1>MySpace Users</h1>
+      {/* <UserForm newestUser = {displayNewUser}/> */}
       {renderUsers()}
     </div>
   );

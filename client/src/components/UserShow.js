@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { Button } from "semantic-ui-react";
+import { Button, Card } from "semantic-ui-react";
 
 const UserShow = () => {
 

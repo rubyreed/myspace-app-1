@@ -4,29 +4,34 @@ import { Button, Form } from "semantic-ui-react";
 
 const UserForm = (props) => {
 
-  const {newestUser} = props
+  const {newestUser, id, updateUser, email:initialEmail, password:initialPassword} = props
 
-  const [emailState, setEmailState] = useState("");
-  const [passwordState, setPasswordState] = useState("");
+  const [emailState, setEmailState] = useState(initialEmail ? initialEmail: "");
+  const [passwordState, setPasswordState] = useState(initialPassword ? initialPassword : "");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUser = {email: emailState, password: passwordState};
-
+  if (id) {
+    let response = await axios.put(`/api/users/${id}`, newUser)
+    updateUser(response.data)
+  }
+  else {
   let response = await axios.post("/api/auth", newUser);
   newestUser(response.data.data)
+    }
   };
 
   return (
   <div style={styles.form}>
-    <h1>Add New User</h1>
+    <h1>{id ? "Update" : "New"}</h1>
       <Form onSubmit={handleSubmit}>
         <p>Email:</p>
         <Form.Input value = {emailState} onChange = {(e) => setEmailState(e.target.value)}/>
         <p>Password:</p>
         <Form.Input value = {passwordState} onChange = {(e) => setPasswordState(e.target.value)}/>
        <br/>
-        <Button>Click to Add New User</Button>
+        <Button>{id ? "Update" : "Create"}</Button>
       </Form>
   </div>
   );
