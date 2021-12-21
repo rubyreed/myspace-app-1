@@ -24,7 +24,7 @@ getPost();
 
 return (
   <div>
-    <p>Post Show Here</p>
+    <p>Show Post</p>
     <p>Title: {post.title}</p>
     <p>Body: {post.body}</p>
   </div>

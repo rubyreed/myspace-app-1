@@ -12,6 +12,8 @@ import UserShow from "./components/UserShow";
 import Posts from "./components/Posts";
 import UserForm from "./components/UserForm";
 import PostForm from "./components/PostForm";
+import PostShow from "./components/PostShow";
+
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
         <Route path="/users/:id/edit" element = {<UserForm/>}/>
         <Route path="/users/:id/posts" element={<Posts/>}/>
         <Route path = "/users/:user_id/posts/:id/edit" element = {<PostForm />}/>
+        <Route path = "/users/:user_id/posts/:id" element = {<PostShow />}/>
         <Route element={<RequireAuth />}>
           {/* protected routes go here */}
         <Route path="/" element={<Home />} />

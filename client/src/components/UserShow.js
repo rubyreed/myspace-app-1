@@ -24,7 +24,7 @@ const UserShow = () => {
 
 return (
   <div>
-<p>User Show Here</p>
+<p>Hey {user.email}!</p>
 <p>Email: {user.email}</p>
 <p>Password: ******* </p>
 <Link to={`/users/${params.id}/posts`}>Posts</Link>
