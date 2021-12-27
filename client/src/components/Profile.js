@@ -4,10 +4,10 @@ import UserForm from "./UserForm";
 import { Button } from "semantic-ui-react";
 import { AuthContext } from "../providers/AuthProvider";
 
-const User = (props) => {
-  const {id, email, password, updateUser, deleteUser} = props
+const Profile = (props) => {
+  // const {id, email, password, updateUser, deleteUser} = props
 
-  // const {id, email, password, updateUser, deleteUser} = useContext(AuthContext);
+  const {id, email, password, updateUser, deleteUser} = useContext(AuthContext);
 
   const [showForm, setShowForm] = useState(false);
 
@@ -32,4 +32,4 @@ const User = (props) => {
   );
 };
 
-export default User;
+export default Profile;

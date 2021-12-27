@@ -4,10 +4,11 @@ const Protected = () => {
   const auth = useContext(AuthContext);
   return (
     <div>
-      <h1>Protected</h1>
+      <h1>Login Successful</h1>
+      <p>Welcome {auth.email}!</p>
       <p>Email: {auth.email}</p>
-      <p> {JSON.stringify(auth)}</p>
-      {auth.authenticated && <p>You are logged in!</p>}
+      {/* <p> {JSON.stringify(auth)}</p> */}
+      {auth.authenticated && <p>successful</p>}
       {!auth.authenticated && <p>ERROR SHOULD NOT BE HERE</p>}
     </div>
   );

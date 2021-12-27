@@ -26,15 +26,15 @@ const renderUsers = () => {
   if (users.length === 0) {
     return <p>No Users</p>
   }
-  return users.map((user) => {
-    return <User key={user.id}{...user}updateUser={updateUser} deleteUser={deleteUser}/>
+  return users.map((you) => {
+    return <User key={you.id}{...you}updateUser={updateUser} deleteUser={deleteUser}/>
   });
 };
 
 function refreshPage(){
   window.location.reload(false);
 };
-
+console.log(users);
 
 const deleteUser = async (id) => {
   let response = await axios.delete(`/api/users/${id}`);
