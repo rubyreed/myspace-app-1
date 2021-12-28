@@ -1,13 +1,10 @@
 import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserForm from "./UserForm";
-import { Button } from "semantic-ui-react";
-import { AuthContext } from "../providers/AuthProvider";
+import { Button, Item } from "semantic-ui-react";
 
 const User = (props) => {
-  const {id, email, password, updateUser, deleteUser} = props
-
-  // const {id, email, password, updateUser, deleteUser} = useContext(AuthContext);
+  const {id, email, password} = props
 
   const [showForm, setShowForm] = useState(false);
 
@@ -17,17 +14,20 @@ const User = (props) => {
 
   return (
     <div key={props.id}>
-      <h1>User</h1>
-      <p>ID: {id}</p>
-      <p>Email: {email}</p>
-      <p>Password: ****** </p>
-      <Button onClick = {toggleForm}>
-        {showForm ? "Cancel" : "Update"}
-      </Button>
-      {showForm && <UserForm id = {id} email = {email} password = {password} updateUser = {updateUser}/>}
-    <Button onClick={() => deleteUser(id)}>Delete</Button>
-    <br/>
-      <Link to={`/users/${id}/posts`}>View Posts</Link>
+      <Item className="user">
+        <Item.Content>
+      <Item.Header>User</Item.Header>
+      <Item.Meta>
+        <span> ID: {id} </span>
+        <br/>
+        <span>Email: {email}</span>
+        <br/>
+        <span> Password: ******</span>
+        <br/>
+       <button className="view"> <Link className="link" to={`/users/${id}/postsmain`}>View Posts</Link> </button>
+      </Item.Meta>
+      </Item.Content>
+      </Item>
     </div>
   );
 };

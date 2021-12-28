@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link, Outlet, Route, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import {Menu, Button, Container} from "semantic-ui-react";
 
@@ -11,48 +11,45 @@ const Layout = () => {
   const renderAuthLinks = () => {
     if (authenticated) {
       return(
-      <> 
-        <Link to="/users/profile">Profile</Link>
-      <Button onClick={() => handleLogout(nav)}>Logout</Button>
-      </>
+      <div> 
+        <button className="navbutton">
+        <Link className="navlink" to="/users/profile">Profile</Link>
+        </button>
+      <button className="navbutton" onClick={() => handleLogout(nav)}>Logout</button>
+      </div>
       )}
     return (
-      <>
-      <Menu>
-        <Menu.Item>
-          <Link to="/register">Register</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/login">Login</Link>
-        </Menu.Item>
-        </Menu>
-      </>
+      <div>
+        <button className="navbutton">
+          <Link className="navlink" to="/register">Register</Link>
+        </button>
+        <button className="navbutton">
+          <Link className="navlink" to="/login">Login</Link>
+        </button>
+        </div>
     );
   };
   return (
     <>
-    <Menu>
-      {/* <Menu.Item>
-        <Link to="/users">Users</Link>
-      </Menu.Item> */}
-      <Menu.Item>
-        <Link to="/">Home</Link>
-      <Menu.Item>
-      </Menu.Item>
-      {/* <Menu.Item>
-          <Link to="/public">Public</Link>
-      </Menu.Item> */}
-      {/* <Menu.Item>
-          <Link to="/protected">Protected</Link>
-      </Menu.Item> */}
+    <div className="menu">
+      <button className="navbutton">
+        <Link className="navlink" to="/">Home</Link>
+      </button>
+      <div>
         {renderAuthLinks()}
-      </Menu.Item>
-      </Menu>
+      </div>
+      </div>
       <Container>
         <Outlet />
       </Container>
       </>
   );
+};
+
+const styles={
+logout: {
+  textAlign: "right",
+}
 };
 
 export default Layout;

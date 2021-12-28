@@ -12,7 +12,7 @@ const Login = () => {
     handleLogin({ email, password }, navigate);
   };
   return (
-    <>
+    <div className="card">
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         <p>Email</p>
@@ -32,7 +32,7 @@ const Login = () => {
         <br/>
         <Button>Login</Button>
       </Form>
-    </>
+    </div>
   );
 };
 

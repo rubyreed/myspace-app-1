@@ -9,6 +9,11 @@ const PostForm = (props) => {
   const [titleState, setTitleState] = useState(initialTitle ? initialTitle : "");
   const [bodyState, setBodyState] = useState(initialBody ? initialBody : "");
 
+const [showNewForm, setShowNewForm] = useState(false);
+const toggleNewForm = ()=> {
+  setShowNewForm(!showNewForm);
+};
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {title: titleState, body: bodyState};
@@ -24,26 +29,28 @@ else {
   };
 
   return (
-  <div style={styles.form}>
-    <h1>{id ? "Update" : "New"}</h1>
-      <Form onSubmit={handleSubmit}>
+  <div>
+    <Button onClick={toggleNewForm}>
+    {id ? "Cancel" : "New Post"}
+    </Button>
+      {showNewForm && <Form onSubmit={handleSubmit}>
         <p>Title:</p>
         <Form.Input value = {titleState} onChange = {(e) => setTitleState(e.target.value)}/>
         <p>Body:</p>
         <Form.Input value = {bodyState} onChange = {(e) => setBodyState(e.target.value)}/>
        <br/>
         <Button>{id ? "Update" : "Create"}</Button>
-      </Form>
+      </Form>}
   </div>
   );
 };
 
-const styles = {
-  form: {
-    border: "3px solid blue",
-    margin: "5px",
-    padding: "5px"
-  }
-};
+// const styles = {
+//   form: {
+//     border: "3px solid white",
+//     margin: "5px",
+//     padding: "5px"
+//   }
+// };
 
 export default PostForm;

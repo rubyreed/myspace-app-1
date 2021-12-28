@@ -27,7 +27,7 @@ const renderUsers = () => {
     return <p>No Users</p>
   }
   return users.map((you) => {
-    return <User key={you.id}{...you}updateUser={updateUser} deleteUser={deleteUser}/>
+    return <User key={you.id}{...you}deleteUser={deleteUser}/>
   });
 };
 
@@ -50,7 +50,7 @@ const deleteUser = async (id) => {
 
   return (
     <div>
-      <h1>MySpace Users</h1>
+      <h2 className="browse">Browse Users</h2>
       {/* <UserForm newestUser = {displayNewUser}/> */}
       {renderUsers()}
     </div>

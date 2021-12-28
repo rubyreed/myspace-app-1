@@ -19,7 +19,7 @@ const Register = () => {
     handleRegister({ email, password }, navigate);
   };
   return (
-    <>
+    <div className="card">
       <h1>Register New User</h1>
       <Form onSubmit={handleSubmit}>
         <p>Email</p>
@@ -45,7 +45,7 @@ const Register = () => {
         />
         <Button>Register</Button>
       </Form>
-    </>
+    </div>
   );
 };
 

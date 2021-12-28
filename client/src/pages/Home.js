@@ -7,7 +7,7 @@ const Home = () => {
  
   return (
     <div>
-      <h1>MySpace Home</h1>
+      <h1 className="welcome">Welcome to MySpace</h1>
       <Users/>
       {/* <p>Authenticated? {JSON.stringify(auth)}</p> */}
     </div>

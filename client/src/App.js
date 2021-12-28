@@ -13,13 +13,14 @@ import Posts from "./components/Posts";
 import UserForm from "./components/UserForm";
 import PostForm from "./components/PostForm";
 import PostShow from "./components/PostShow";
-import User from "./components/User";
 import Profile from "./components/Profile";
+import PostsMain from "./components/PostsMain";
 
 
 
 function App() {
   return (
+    <div className="pages">
     <Routes>
       <Route element={<Layout />}>
         {/* public routes go here */}
@@ -28,9 +29,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/users/:id" element={<UserShow/>}/>
         <Route path="/users/:id/edit" element = {<UserForm/>}/>
-        <Route path="/users/:id/posts" element={<Posts/>}/>
-        <Route path = "/users/:user_id/posts/:id/edit" element = {<PostForm />}/>
         <Route path = "/users/:user_id/posts/:id" element = {<PostShow />}/>
+        <Route path = "/users/:user_id/posts/:id/edit" element = {<PostForm />}/>
+          <Route path="/users/:user_id/postsmain" element={<PostsMain/>}/>
+        <Route path="/users/:id/posts" element={<Posts/>}/>
         <Route element={<RequireAuth />}>
           {/* protected routes go here */}
           <Route path="/users/profile" element={<Profile/>}/>
@@ -40,6 +42,7 @@ function App() {
         </Route>
       </Route>
     </Routes>
+    </div>
   );
 }
 
