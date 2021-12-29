@@ -13,21 +13,11 @@ const User = (props) => {
  };
 
   return (
-    <div key={props.id}>
-      <Item className="user">
-        <Item.Content>
-      <Item.Header>User</Item.Header>
-      <Item.Meta>
-        <span> ID: {id} </span>
-        <br/>
-        <span>Email: {email}</span>
-        <br/>
-        <span> Password: ******</span>
-        <br/>
+    <div className="user" key={props.id}>
+        <p> ID: {id} </p>
+        <p>Email: {email}</p>
+        {/* <span> Password: {password}</span> */}
        <button className="view"> <Link className="link" to={`/users/${id}/postsmain`}>View Posts</Link> </button>
-      </Item.Meta>
-      </Item.Content>
-      </Item>
     </div>
   );
 };

@@ -20,7 +20,7 @@ import PostsMain from "./components/PostsMain";
 
 function App() {
   return (
-    <div className="pages">
+    <div className="app">
     <Routes>
       <Route element={<Layout />}>
         {/* public routes go here */}

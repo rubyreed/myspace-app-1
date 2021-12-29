@@ -45,7 +45,7 @@ function refreshPage(){
       <h1>Profile</h1>
       <p>ID: {id}</p>
       <p>Email: {email}</p>
-      <p>Password: ****** </p>
+      <p>Password: {password} </p>
       <Button onClick = {toggleForm}>
         {showForm ? "Cancel" : "Update"}
       </Button>

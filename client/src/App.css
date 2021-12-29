@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 /* .App-logo {
   height: 40vmin;
@@ -36,10 +33,15 @@
     transform: rotate(360deg);
   }
 } */
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Russo+One&family=Staatliches&display=swap');
+
+.App {
+  text-align: center;
+}
 
 
 .card{
-  margin:10px;
+  margin:auto;
   padding:15px;
   background: rgb(2,0,36);
 background: linear-gradient(138deg, rgba(2,0,36,1) 0%, 
@@ -48,10 +50,12 @@ border-radius: 1em;
 text-align: center;
 box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 opacity:0.98;
+border:3px solid white;
+width:40%;
 }
 
 .user{
-  margin:20px;
+ 
   padding:15px;
   background: rgb(2,0,36);
 background: linear-gradient(138deg, rgba(2,0,36,1) 0%, 
@@ -60,17 +64,24 @@ border-radius: 1em;
 text-align: center;
 box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 opacity:0.98;
-
+border:3px solid white;
+margin: auto;
+width: 40%;
+margin-bottom:20px;
 }
 
 .pages{
+  padding:20px;
+  padding-bottom:100px;
+  
   background-image: url("https://assets.justinmind.com/wp-content/uploads/2018/05/top-10-worst-90s-website-designs-header.png");
+
 }
 
 .menu{
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   border-radius: 8px;
-  border:solid 3px rgba(253,168,45,1);
+  border:solid 10px rgba(253,168,45,1);
   display:flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -107,15 +118,18 @@ background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,168,45,1) 100
   padding:10px;
   background-color:rgb(26, 255, 0);
   color: rgb(255, 0, 247);
+  font-family: 'Russo One', sans-serif;
 }
 
 .navlink{
 color: rgb(255, 0, 247);
+font-family: 'Russo One', sans-serif;
 }
 
 .post{
   background-color: dodgerblue;
   padding:20px;
-  border:2px solid purple;
+  border:2px solid rgb(0, 255, 247);
   border-radius: 10px;
+  margin:15px;
 }

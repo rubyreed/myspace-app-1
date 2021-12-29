@@ -39,9 +39,9 @@ const Layout = () => {
         {renderAuthLinks()}
       </div>
       </div>
-      <Container>
+      <div className="pages">
         <Outlet />
-      </Container>
+      </div>
       </>
   );
 };

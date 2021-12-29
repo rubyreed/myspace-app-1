@@ -50,20 +50,12 @@ const PostsMain = () => {
   // };
   
   return (
-    <div style={styles.container}>
+    <div className="card">
       <h1>Posts</h1>
       {/* <PostForm newestPost = {displayNewPost}/> */}
       {renderPosts()}
   </div>
   );
-};
-
-const styles = {
-  container: {
-    border: "5px solid black",
-    margin: "5px",
-    padding: "5px"
-  }
 };
 
 
