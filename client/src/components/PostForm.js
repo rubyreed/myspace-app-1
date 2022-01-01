@@ -14,6 +14,7 @@ const toggleNewForm = ()=> {
   setShowNewForm(!showNewForm);
 };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {title: titleState, body: bodyState};
@@ -21,6 +22,7 @@ const toggleNewForm = ()=> {
     if (id){
       let response = await axios.put (`/api/users/${params.id}/posts/${id}`, newPost);
       updatePost(response.data)
+      refreshPage()
     }
 else {
  let response = await axios.post(`/api/users/${params.id}/posts/`, newPost);
@@ -28,19 +30,25 @@ else {
     }
   };
 
+  function refreshPage(){
+    window.location.reload(false);
+  };
+  
+  console.log(props);
+
   return (
   <div>
-    <Button onClick={toggleNewForm}>
-    {id ? "Cancel" : "New Post"}
-    </Button>
-      {showNewForm && <Form onSubmit={handleSubmit}>
+    {/* <Button onClick={toggleNewForm}> */}
+    <h1>{id ? "Update Post" : "New Post"}</h1>
+    {/* </Button> */}
+      <Form onSubmit={handleSubmit}>
         <p>Title:</p>
         <Form.Input value = {titleState} onChange = {(e) => setTitleState(e.target.value)}/>
         <p>Body:</p>
         <Form.Input value = {bodyState} onChange = {(e) => setBodyState(e.target.value)}/>
        <br/>
         <Button>{id ? "Update" : "Create"}</Button>
-      </Form>}
+      </Form>
   </div>
   );
 };

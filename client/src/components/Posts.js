@@ -49,7 +49,7 @@ const Posts = () => {
   };
   
   return (
-    <div className="card" style={styles.container}>
+    <div className="card">
       <h1>Posts</h1>
       {renderPosts()}
       <br/>
@@ -58,13 +58,13 @@ const Posts = () => {
   );
 };
 
-const styles = {
-  container: {
-    border: "5px solid white",
-    margin: "5px",
-    padding: "5px"
-  }
-};
+// const styles = {
+//   container: {
+//     border: "5px solid white",
+//     margin: "5px",
+//     padding: "5px"
+//   }
+// };
 
 
 export default Posts;

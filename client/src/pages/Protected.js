@@ -8,7 +8,7 @@ const Protected = () => {
       <p>Welcome {auth.email}!</p>
       <p>Email: {auth.email}</p>
       {/* <p> {JSON.stringify(auth)}</p> */}
-      {auth.authenticated && <p>Take a trip back to the 90s.</p>}
+      {auth.authenticated && <p><b>Take a trip back to the 90s.</b></p>}
       {!auth.authenticated && <p>ERROR SHOULD NOT BE HERE</p>}
     </div>
   );

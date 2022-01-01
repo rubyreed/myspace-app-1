@@ -41,7 +41,7 @@
 
 
 .card{
-  margin:auto;
+  justify-content: center;
   padding:15px;
   background: rgb(2,0,36);
 background: linear-gradient(138deg, rgba(2,0,36,1) 0%, 
@@ -52,6 +52,7 @@ box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, 
 opacity:0.98;
 border:3px solid white;
 width:40%;
+margin:auto;
 }
 
 .user{

@@ -10,12 +10,12 @@ const PostsMain = () => {
   const [posts, setPosts] = useState([]);
 
   const params = useParams();
-  console.log(params);
+  console.log(params.user_id);
 
   useEffect(() => {
 
   const getPosts = async () => {
-    let response = await axios.get(`/api/users/${params.id}/posts`);
+    let response = await axios.get(`/api/users/${params.user_id}/posts`);
     setPosts(response.data)
     console.log(response.data)
   };
@@ -29,7 +29,8 @@ const PostsMain = () => {
   //   let updatedPosts = posts.map((post) => (post.id === changedPost.id ? changedPost : post));
   //   setPosts(updatedPosts)
   // }
-  
+
+
   const renderPosts = () => {
     if (posts.length === 0) {
       return <p>No Posts</p>

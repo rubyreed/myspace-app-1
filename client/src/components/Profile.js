@@ -42,7 +42,7 @@ function refreshPage(){
 
   return (
     <div className="card" key={props.id}>
-      <h1>Profile</h1>
+      <h1>My Profile</h1>
       <p>ID: {id}</p>
       <p>Email: {email}</p>
       <p>Password: {password} </p>
